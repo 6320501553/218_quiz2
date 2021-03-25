@@ -1,26 +1,37 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,k,sum=0,s,u,f,d;
+    int n,i,j,k,sum=0,s,u,f,d,a,b,c,e,g,h;
     scanf("%d",&n);
     if(n<10)
         printf("%d",n);
     else if(n>9&&n<=100)
     {
-        s=n/10;
+        a=n%10;
+        if(a>=5)
+            s=(n+10)/10;
+        else
+            s=n/10;
         for(k=1; k<s; k++)
         {
-            for(j=0; j<10; j++)
+            for(i=0; i<=a; i++)
             {
-                if(k==j)
-                    sum++;
+                for(j=0; j<10; j++)
+                {
+                    if(k==j)
+                        sum++;
+                }
             }
         }
         printf("%d",sum+9);
     }
     else if(n>99&&n<=1000)
     {
-        s=n/100;
+        a=n%100;
+        if(a>=50)
+            s=(n/100);
+        else
+            s=n/100;
         for(k=1; k<s; k++)
         {
             for(j=0; j<10; j++)
@@ -88,7 +99,7 @@ int main()
                     {
                         for(f=0; f<10; f++)
                         {
-                            for(d=0;d<10;d++)
+                            for(d=0; d<10; d++)
                             {
                                 if(k==d&&j==f&&i==u)
                                     sum++;
