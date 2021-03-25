@@ -5,7 +5,7 @@ int main()
     scanf("%d",&n);
     if(n<10)
         printf("%d",n);
-    else if(n<100)
+    else if(n>9&&n<=100)
     {
         s=n/10;
         for(k=1; k<s; k++)
@@ -18,7 +18,7 @@ int main()
         }
         printf("%d",sum+9);
     }
-    else if(n<1000)
+    else if(n>99&&n<=1000)
     {
         s=n/100;
         for(k=1; k<s; k++)
@@ -34,7 +34,7 @@ int main()
         }
         printf("%d",sum+18);
     }
-    else if(n<10000)
+    else if(n>999&&n<=10000)
     {
         s=n/1000;
         for(k=1; k<s; k++)
@@ -53,7 +53,7 @@ int main()
         }
         printf("%d",sum+108);
     }
-    else if(n<100000)
+    else if(n>9999&&n<=100000)
     {
         s=n/10000;
         for(k=1; k<s; k++)
@@ -75,7 +75,7 @@ int main()
         }
         printf("%d",sum+198);
     }
-    else if(n<1000000)
+    else if(n>99999&&n<=1000000)
     {
         s=n/100000;
         for(k=1; k<s; k++)
