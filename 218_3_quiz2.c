@@ -1,112 +1,120 @@
 #include<stdio.h>
 int main()
 {
-    int n,i=0,j,k,sum=0,u,f,d,a,s;
+    int n,i=0,j,k,sum=0,u,f,d,a,s,h,y=0;
+    int m[10000];
     scanf("%d",&n);
-    if(n<10)
-        printf("%d",n);
-    else if(n>9&&n<=100)
+    for(i=1; i<=10; i++)
     {
-        a=n%10;
-        if(a>=5)
-            s=(n+10)/10;
-        else
-            s=n/10;
-        for(k=1; k<s; k++)
+        m[i]=i;
+        sum++;
+    }
+    i=sum;
+    for(k=1; k<10; k++)
+    {
+        for(j=1; j<10; j++)
         {
-            for(j=i; j<10; j++)
+            if(k==j)
             {
-                if(k==j)
-                    sum++;
+                h=k*10;
+                m[i]=h+j;
+                i++;
+                sum++;
             }
         }
-        printf("%d",sum+9);
     }
-    else if(n>99&&n<=1000)
+    h=sum;
+    for(k=1; k<10; k++)
     {
-        a=n%100;
-        if(a>=50)
-            s=(n/100);
-        else
-            s=n/100;
-        for(k=1; k<s; k++)
+        m[i]=0;
+        for(j=0; j<10; j++)
         {
-            for(j=0; j<10; j++)
+            for(i=0; i<10; i++)
             {
-                for(i=0; i<10; i++)
+                if(k==i)
                 {
-                    if(k==i)
-                        sum++;
+                    m[h]=((k*100)+(j*10)+i);
+                    h++;
+                    sum++;
                 }
             }
         }
-        printf("%d",sum+18);
     }
-    else if(n>999&&n<=10000)
+    h=sum;
+    for(k=1; k<10; k++)
     {
-        s=n/1000;
-        for(k=1; k<s; k++)
+        for(j=0; j<10; j++)
         {
-            for(j=0; j<10; j++)
+            for(i=0; i<10; i++)
             {
-                for(i=0; i<10; i++)
+                for(u=0; u<10; u++)
                 {
-                    for(u=0; u<10; u++)
+                    if(k==u&&i==j)
                     {
-                        if(k==u&&i==j)
-                            sum++;
+                        m[h]=(k*1000)+(j*100)+(i*10)+u;
+                        h++;
+                        sum++;
                     }
                 }
             }
         }
-        printf("%d",sum+108);
     }
-    else if(n>9999&&n<=100000)
+    h=sum;
+    for(k=1; k<10; k++)
     {
-        s=n/10000;
-        for(k=1; k<s; k++)
+        for(j=0; j<10; j++)
         {
-            for(j=0; j<10; j++)
+            for(i=0; i<10; i++)
             {
-                for(i=0; i<10; i++)
+                for(u=0; u<10; u++)
                 {
-                    for(u=0; u<10; u++)
+                    for(f=0; f<10; f++)
                     {
-                        for(f=0; f<10; f++)
+                        if(k==f&&j==u)
                         {
-                            if(k==f&&j==u)
-                                sum++;
+                            m[h]=(k*10000)+(j*1000)+(i*100)+(u*10)+f;
+                            h++;
+                            sum++;
                         }
                     }
                 }
             }
         }
-        printf("%d",sum+198);
     }
-    else if(n>99999&&n<=1000000)
+    h=sum;
+    for(k=1; k<10; k++)
     {
-        s=n/100000;
-        for(k=1; k<s; k++)
+        for(j=0; j<10; j++)
         {
-            for(j=0; j<10; j++)
+            for(i=0; i<10; i++)
             {
-                for(i=0; i<10; i++)
+                for(u=0; u<10; u++)
                 {
-                    for(u=0; u<10; u++)
+                    for(f=0; f<10; f++)
                     {
-                        for(f=0; f<10; f++)
+                        for(d=0; d<10; d++)
                         {
-                            for(d=0; d<10; d++)
+                            if(k==d&&j==f&&i==u)
                             {
-                                if(k==d&&j==f&&i==u)
-                                    sum++;
+                                m[h]=(k*100000)+(j*10000)+(i*1000)+(u*100)+(f*10)+d;
+                                h++;
+                                sum++;
                             }
                         }
                     }
                 }
             }
         }
-        printf("%d",sum+1098);
     }
+    for(i=0;i<sum;i++)
+    {
+        if(m[i]<=n)
+        {
+            y=i;
+        }
+        else if(m[i]>n)
+            break;
+    }
+    printf("%d",y);
     return 0;
 }
