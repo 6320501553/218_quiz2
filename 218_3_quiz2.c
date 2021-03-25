@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,k,sum=0,s;
+    int n,i,j,k,sum=0,s,u;
     scanf("%d",&n);
     if(n<=10)
         printf("%d",n-1);
@@ -25,7 +25,7 @@ int main()
         {
             for(j=0; j<10; j++)
             {
-                for(i=0;i<10;i++)
+                for(i=0; i<10; i++)
                 {
                     if(k==i)
                         sum++;
@@ -34,5 +34,24 @@ int main()
         }
         printf("%d",sum+18);
     }
-    return 0;
-}
+    else if(n>1000&&n<=10000)
+    {
+        s=n/1000;
+        for(k=1; k<s; k++)
+        {
+            for(j=0; j<10; j++)
+            {
+                for(i=0; i<10; i++)
+                {
+                    for(u=0;u<10;u++)
+                    {
+                         if(k==u&&i==j)
+                            sum++;
+                    }
+                }
+            }
+        }
+        printf("%d",sum+108);
+    }
+        return 0;
+    }
