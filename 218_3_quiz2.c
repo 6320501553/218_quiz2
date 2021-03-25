@@ -1,56 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,k,sum=0,s,u,f,d,a,b,c,e,g,h;
-    int m[1000000];
+    int n,i=0,j,k,sum=0,u,f,d,a,s;
     scanf("%d",&n);
-    for(i=1;i<10;i++)
-    {
-        m[i]=i;
-    }
-    for(i=10;i<100;i++)
-    {
-        for(k=1; k<10; k++)
-        {
-            for(j=0; j<10; j++)
-            {
-                if(k==j)
-                    m[i]=(k*10)+j;
-            }
-        }
-    }
-    for(i=100;i<1000;i++)
-    {
-        for(k=1; k<10; k++)
-        {
-            for(j=0; j<10; j++)
-            {
-                for(i=0; i<10; i++)
-                {
-                    if(k==i)
-                        m[i]=(k*100)+(j*10)+i;
-                }
-            }
-        }
-    }
-    for(i=1000;i<10000;i++)
-    {
-        for(k=1; k<10; k++)
-        {
-            for(j=0; j<10; j++)
-            {
-                for(i=0; i<10; i++)
-                {
-                    for(u=0; u<10; u++)
-                    {
-                        if(k==u&&i==j)
-                            m[i]=(k*1000)+(j*100)+(i*10)+u;
-                    }
-                }
-            }
-        }
-    }
-    /*if(n<10)
+    if(n<10)
         printf("%d",n);
     else if(n>9&&n<=100)
     {
@@ -154,6 +107,6 @@ int main()
             }
         }
         printf("%d",sum+1098);
-    }*/
+    }
     return 0;
 }
